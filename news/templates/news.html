@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+{%for new in news%}
+    <div class="card mb-3">
+        <div class="row g-0">
+            <div class="card-body">
+                <h5 class="card-title">{{new.headline}}</h5>
+                <p class="card-text">{{new.body}}</p>
+                <p class="card-subtitle mb-2 text-muted">{{new.date}}</p>
+            </div>
+        </div>
+    </div>
+{%endfor%}
+{% endblock content %}
