@@ -21,10 +21,11 @@ from movie import views as movie
 
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
-    path('', movie.home, name='home'),
     path('about/', movie.about, name='about'),
+    path('', movie.home, name='home'),
     path('signup/', movie.signup, name='signup'),
-    path('news/', include('news.urls'))
+    path('news/', include('news.urls')),
+    path('movie/', include('movie.urls'))
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

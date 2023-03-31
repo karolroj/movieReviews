@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="row">
+        <div class="col-4">
+            <img src="{{ movie.image.url }}" class="card-img-top" alt="{movie.title}">
+        </div>
+        <div class="col-8">
+            <div class="card-body">
+                <h5 class="card-title">{{ movie.title }}</h5>
+                <p class="card-text">{{movie.description}}</p>
+                {% if movie.url %}
+                    <a href="{{ movie.url }}" class="btn btn-primary">Movie link</a>
+                {% endif %}
+                <a href="{% url 'home' %}" class="btn btn-primary float-end">Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock content %}
