@@ -1,4 +1,4 @@
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
@@ -23,3 +23,8 @@ def signupaccount(request):
                               {'form': UserCreateForm, 'error': 'Username already taken. Choose another username.'})
         else:
             return render(request, 'signupaccount.html', {'form': UserCreateForm, 'error': 'Passwords do not match'})
+
+
+def logoutaccount(request):
+    logout(request)
+    return redirect('home')
