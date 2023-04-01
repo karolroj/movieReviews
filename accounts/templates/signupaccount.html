@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2 class="mb-3">Sign up</h2>
+    <form method="post" class="col-3">
+        {% if error %}
+            <div class="alert alert-danger mt-3" role="alert">
+                {{ error }}
+            </div>
+        {% endif %}
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input value="Sign Up" type="submit" class="btn btn-primary" />
+    </form>
+{% endblock content %}
+    
